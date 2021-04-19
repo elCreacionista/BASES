@@ -1,0 +1,77 @@
+            ------PROJECTE 2------
+           
+.....Cadena de supermercats Limbo.....
+
+TAULES
+
+Client(
+  id,
+  Nom_Usuari,
+  "Particular" / "Empresa"
+);
+
+Dades_Client(
+  id,
+  Contrasenya,
+  Correu_Electronic,
+  Adresa1,
+  Adresa2,
+  Adresa3,
+  id_Tarjeta1,
+  id_Tarjeta2
+);
+
+Tarjeta(
+  id,
+  "Visa" / "Mastercard",
+  Data_caducitat,
+  Codi_seguretat,
+);
+
+Producte(
+  codi,
+  Descripció,
+  PVP,
+  "4" / "10" / "21",
+  Marca,
+  "Pes" / "Volum",
+  Quantitat
+);
+
+Promocions(
+  Codi_Producte,
+  Descompte,
+  Data_Inici,
+  Data_Final
+);
+
+Persona(
+  id,
+  id_Client,
+  NIF,
+  Data_Naixement,
+  Nom,
+  Cognom1,
+  Cognom2,
+);
+
+Empresa(
+  CIF,
+  Es_Dedica_A
+);
+
+Adresa(
+  id,
+  id_ciutat,
+  carrer,
+  numero,
+  CP,
+  pis,
+  porta
+);
+
+Ciutat(
+  id,
+  nom,
+  provincia
+);
