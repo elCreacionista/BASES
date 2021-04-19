@@ -38,6 +38,19 @@ Producte(
   Quantitat
 );
 
+Compra(
+  id,
+  data_Compra,
+  Total,
+);
+                  ------------------------NO SE QUE DIU DELS PRODUCTES FRESCOS-------------------------
+Compra_Producte(
+  codi_producte,
+  PVP,
+  Unitats,
+  Descompte
+);
+
 Promocions(
   Codi_Producte,
   Descompte,
@@ -73,5 +86,15 @@ Adresa(
 Ciutat(
   id,
   nom,
-  provincia
+  id_provincia
+);
+
+Ciutat_Pertany_Provincia(
+  id_ciutat,
+  id_provincia
+);
+
+Provincia(
+  id,
+  nom
 );
