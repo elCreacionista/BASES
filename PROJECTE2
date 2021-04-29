@@ -2,7 +2,118 @@
            
 .....Cadena de supermercats Limbo.....
 
+
+
+CREATE TABLE Client(
+    id unsigned autoincrement int,
+    nom_usuari varchar(50),
+    tipus enum("Particular","Empresa"),
+    primary key id
+--------------------------------------------FOREIGN KEYS-------------------------------------------------
+);
+
+CREATE TABLE Dades_client(
+    id unsigned autoincrement int,
+    contrasenya varchar(50),
+    correu_Electronic varchar(100),
+    adresa1 varchar(50),
+    adresa2 varchar(50),
+    adresa3 varchar(50),
+    id_tarjeta1 varchar(12),
+    id_tarjeta2 varchar(12),
+    primary key id
+--------------------------------------------FOREIGN KEYS-------------------------------------------------
+);
+CREATE TABLE Tarjeta(
+    id unsigned autoincrement int,
+    tipus enum("Visa","Mastercard"),
+    Data_Caducitat date,
+    codi_seguretat varchar(30),
+    primary key id
+--------------------------------------------FOREIGN KEYS-------------------------------------------------
+);
+CREATE TABLE Producte(
+    Codi unsigned autoincrement int,
+    Descripcio varchar(300),
+    PVP int unsigned,
+    Iva enum(4,10, 21),
+    Marca varchar(20),
+    Mesura enum ("Pes","Volum"),
+    Quantitat int unsigned,
+    primary key id
+--------------------------------------------FOREIGN KEYS-------------------------------------------------
+);
+CREATE TABLE Compra(
+    id unsigned autoincrement int,
+    Data_Compra date,
+    Total int unsigned,
+    primary key id
+--------------------------------------------FOREIGN KEYS-------------------------------------------------
+);
+CREATE TABLE Compra_Producte(
+    codi_producte unsigned autoincrement int,
+    PVP float unsigned,
+    Unitats int unsigned,
+    Descompte int,
+    primary key id
+--------------------------------------------FOREIGN KEYS-------------------------------------------------
+);
+CREATE TABLE Promocions(
+    codi_producte unsigned autoincrement int,
+    Descompte float,
+    Data_Inici date,
+    Data_Final date,
+--------------------------------------------FOREIGN KEYS-------------------------------------------------
+);
+CREATE TABLE Persona(
+    id unsigned autoincrement int,
+    id_client int unsigned,
+    Descripcio varchar(300),
+    NIF varchar(11),
+    Data_Naixement date,
+    Nom varchar(50),
+    Cognom1 varchar(20),
+    Cognom2 varchar(20),
+    primary key id
+--------------------------------------------FOREIGN KEYS-------------------------------------------------
+);
+CREATE TABLE Empresa(
+    CIF varchar(20),
+    Es_Dedica_A varchar(100)
+--------------------------------------------FOREIGN KEYS-------------------------------------------------
+);
+CREATE TABLE Adresa(
+    id unsigned autoincrement int,
+    id_ciutat int unsigned,
+    Carrer varchar(300),
+    Numero int unsigned,
+    CP int,
+    pis int,
+    Porta int,
+    primary key id
+--------------------------------------------FOREIGN KEYS-------------------------------------------------
+);
+CREATE TABLE Ciutat(
+    id int unsigned not null,
+    Nom varcahr(20),
+    id_Provincia int unsigned,
+    primary key id
+--------------------------------------------FOREIGN KEYS-------------------------------------------------
+);
+CREATE TABLE Ciutat_Pertany_Provincia(
+    id_Ciutat int unsigned not null,
+    id_Provincia int unsigned,
+--------------------------------------------FOREIGN KEYS-------------------------------------------------
+);
+CREATE TABLE Provincia(
+    id int unsigned not null,
+    Nom varcahr(20),
+    primary key id
+--------------------------------------------FOREIGN KEYS-------------------------------------------------
+);
 TAULES
+
+
 
 Client(
   id,
@@ -20,6 +131,7 @@ Dades_Client(
   id_Tarjeta1,
   id_Tarjeta2
 );
+
 
 Tarjeta(
   id,
@@ -44,6 +156,7 @@ Compra(
   Total,
 );
                   ------------------------NO SE QUE DIU DELS PRODUCTES FRESCOS-------------------------
+
 Compra_Producte(
   codi_producte,
   PVP,
@@ -98,3 +211,5 @@ Provincia(
   id,
   nom
 );
+
+
