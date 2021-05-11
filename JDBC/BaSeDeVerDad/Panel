@@ -1,0 +1,31 @@
+package BaSeDeVerDad;
+
+import javax.naming.ldap.Control;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.SQLException;
+
+public class Panel extends JFrame {
+
+
+    ControlPanel cp = new ControlPanel();
+    VisualPanel vp = new VisualPanel();
+
+    Panel(Database p) {
+        SetUp(p);
+    }
+
+    private void SetUp(Database p) {
+        new JFrame("DATABASE");
+        setSize(1000, 500);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLayout(new GridLayout(2, 1));
+        add(cp);
+        add(vp);
+        setVisible(true);
+    }
+}
+
