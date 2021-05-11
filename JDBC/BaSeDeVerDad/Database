@@ -1,0 +1,26 @@
+package BaSeDeVerDad;
+
+public class Database {
+
+    String namedatabase = "name";
+    boolean createConexion(){
+        //STUFF
+        return true;
+    }
+    String[] Preguntar(String a, String b){
+        return new String[]{"a","b","c"};
+    }
+    String[][] Preguntar(String a, String[] b){
+        return new String[][]{{"a","b"},{"aa", "bb"},{"aaa", "bbb"}};
+    }
+    public String[][] ExecuteQuery(){
+        //STUFF
+        return new String[][]{{"a","b"},{"aa", "bb"},{"aaa", "bbb"}};
+    }
+     boolean closeConexion(){
+        //STUFF
+        return true;
+    }
+
+
+}
