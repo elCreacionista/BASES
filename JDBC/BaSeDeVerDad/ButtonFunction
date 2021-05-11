@@ -1,0 +1,15 @@
+package BaSeDeVerDad;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class ButtonFunction implements ActionListener {
+    String name = "";
+    ButtonFunction(String name){
+        this.name = name;
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        System.out.println(this.name);
+    }
+}
