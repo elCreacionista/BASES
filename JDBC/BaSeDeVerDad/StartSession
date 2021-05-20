@@ -1,0 +1,48 @@
+package BaSeDeVerDad;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class StartSession extends JPanel {
+    JPanel data, buttons;
+    JLabel tittle;
+    JButton login, register;
+    JLabel username, password;
+    JTextField user, pass;
+    StartSession(){
+        setPreferredSize(new Dimension(500,300));
+
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+
+        this.tittle = new JLabel("Login");
+        add(Box.createRigidArea(new Dimension(1,30)));
+        this.add(tittle);
+        tittle.setAlignmentX(Component.CENTER_ALIGNMENT);
+        add(Box.createRigidArea(new Dimension(1,50)));
+
+        data = new JPanel();
+        data.setPreferredSize(new Dimension(100,200));
+        data.setLayout(new GridLayout(2,2));
+        add(data);
+        username = new JLabel("USERNAME: ");
+        data.add(username);
+        password = new JLabel("PASSWORD: ");
+        data.add(password);
+        user = new JTextField();
+        data.add(user);
+        pass = new JTextField();
+        data.add(pass);
+
+        add(Box.createRigidArea(new Dimension(1,60)));
+
+        buttons = new JPanel();
+        buttons.setLayout(new BoxLayout(buttons, BoxLayout.X_AXIS));
+        login = new JButton("Login");
+        register = new JButton("Register");
+        buttons.add(Box.createRigidArea(new Dimension(300,1)));
+        buttons.add(login);
+        buttons.add(Box.createRigidArea(new Dimension(30,1)));
+        buttons.add(register);
+        add(buttons);
+    }
+}
