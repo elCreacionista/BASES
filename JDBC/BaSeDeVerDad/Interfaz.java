@@ -32,16 +32,19 @@ public class Interfaz extends JFrame {
     String[] tablabase2;
     String[] tablabase2_2;
 
+    StartSession st = new StartSession();
 
     Interfaz(Database p) {
         SetUp(p);
     }
     private void SetUp(Database p){
         new JFrame("DATABASE");
-        setSize(1000, 500);
+        setSize(500, 300);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLayout(new GridLayout(2, 1));
+        add(st);
+        st.setVisible(true);
+        /*setLayout(new GridLayout(2, 1));
         add(p_botones);
         add(p_respuestas);
         try {
@@ -50,7 +53,7 @@ public class Interfaz extends JFrame {
         PrimerBoton(p);
         crearJPRespuestas(p);
         p_respuestas.add(conexion);
-        p_respuestas.add(operacion);
+        p_respuestas.add(operacion);*/
         setVisible(true);
     }
 
