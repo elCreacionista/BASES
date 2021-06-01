@@ -36,7 +36,6 @@ public class StartSession extends JPanel {
         data.add(user);
         pass = new JTextField();
         data.add(pass);
-
         errors = new JLabel("     ");
         add(errors);
         errors.setVisible(false);
@@ -66,11 +65,15 @@ public class StartSession extends JPanel {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 System.out.println(((JButton)actionEvent.getSource()).getText());
+                getsize();
 
             }
         });
     }
-
+private void getsize(){
+    Dimension d = getSize();
+    System.out.println(" h: " + d.height + " w: " + d.width);
+}
     public void setActionerLogin(ActionListener e){
         this.login.addActionListener(e);
     }

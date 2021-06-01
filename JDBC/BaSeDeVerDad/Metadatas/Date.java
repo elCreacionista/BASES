@@ -8,7 +8,7 @@ public class Date {
     int year, month, day, hour, minute, seconds;
     String full_date;
 
-    public Date(){
+    protected Date(){
         setData(0,0,0,0,0,0);
     }
     Date(int year, int month, int day){

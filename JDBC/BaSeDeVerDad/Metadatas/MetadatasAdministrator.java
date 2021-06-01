@@ -2,23 +2,22 @@ package BaSeDeVerDad.Metadatas;
 
 import BaSeDeVerDad.Exceptions.NotValidDataException;
 
+import java.util.ArrayList;
+
 public class MetadatasAdministrator {
 
-    public static void main(String[] args) throws Throwable {
-        try {
-            Date a = getDate("56/6/4 1:4:381");
-            System.out.println(a.toString());
-        }catch(NotValidDataException nvde){
-            System.out.println(" mesagge: " + nvde.getMessage());
+    ArrayList<Categoria> categories;
 
-        }
-        catch (Exception e){
-            System.out.println(" mesage: " + e.getMessage());
-        }
+    public static void main(String[] args) throws Throwable {
+        System.out.println("hola;");
 
     }
 
-    public static Date getDate(String date){
+    public void setCategories(ArrayList<Categoria> categories) {
+        this.categories = categories;
+    }
+
+    public Date getDate(String date){
         Date d;
         try {
             d = new Date(date);
@@ -30,5 +29,8 @@ public class MetadatasAdministrator {
             throwable.printStackTrace();
         }
         return new Date();
+    }
+    public User getUser(int client_number, String full_name, String username, String email, ArrayList<Card> cards){
+        return new User(client_number, full_name, username, email, cards);
     }
 }
